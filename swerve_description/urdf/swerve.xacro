@@ -1,0 +1,262 @@
+<?xml version="1.0" ?>
+<robot name="swerve" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find swerve_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find swerve_description)/urdf/swerve.trans" />
+<xacro:include filename="$(find swerve_description)/urdf/swerve.gazebo" />
+
+<link name='base_footprint'>
+</link>
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0999450325732899"/>
+    <mass value="154.23679999999996"/>
+    <inertia ixx="6.337347" ixy="0.0" ixz="-0.0" iyy="6.337285" iyz="0.0" izz="12.633221"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rhino_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.008734014019799674 -6.161737786669619e-15 -0.024152928982157644"/>
+    <mass value="0.41571307511653294"/>
+    <inertia ixx="0.00032" ixy="-0.0" ixz="-5.8e-05" iyy="0.000248" iyz="-0.0" izz="0.000177"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.3 0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.3 0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.010000000000000009 -5.551115123125783e-17 0.0"/>
+    <mass value="0.44390704195223774"/>
+    <inertia ixx="0.0002" ixy="0.0" ixz="-0.0" iyy="0.000115" iyz="-0.0" izz="0.000115"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.31 0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.31 0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rhino_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.008734014019799674 6.161737786669619e-15 -0.024152928982157637"/>
+    <mass value="0.41571307511653294"/>
+    <inertia ixx="0.00032" ixy="0.0" ixz="-5.8e-05" iyy="0.000248" iyz="0.0" izz="0.000177"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.3 -0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.3 -0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.010000000000000009 5.551115123125783e-17 0.0"/>
+    <mass value="0.44390704195223774"/>
+    <inertia ixx="0.0002" ixy="-0.0" ixz="-0.0" iyy="0.000115" iyz="-0.0" izz="0.000115"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.31 -0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.31 -0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rhino_3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.008734014019799674 6.161737786669619e-15 -0.024152928982157644"/>
+    <mass value="0.41571307511653294"/>
+    <inertia ixx="0.00032" ixy="-0.0" ixz="5.8e-05" iyy="0.000248" iyz="0.0" izz="0.000177"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.3 -0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.3 -0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010000000000000009 5.551115123125783e-17 0.0"/>
+    <mass value="0.44390704195223774"/>
+    <inertia ixx="0.0002" ixy="0.0" ixz="0.0" iyy="0.000115" iyz="0.0" izz="0.000115"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.31 -0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.31 -0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rhino_4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.008734014019799674 -6.161737786669619e-15 -0.024152928982157637"/>
+    <mass value="0.41571307511653294"/>
+    <inertia ixx="0.00032" ixy="0.0" ixz="5.8e-05" iyy="0.000248" iyz="-0.0" izz="0.000177"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.3 0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.3 0.3 -0.075"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/rhino_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.010000000000000009 -5.551115123125783e-17 0.0"/>
+    <mass value="0.44390704195223774"/>
+    <inertia ixx="0.0002" ixy="-0.0" ixz="0.0" iyy="0.000115" iyz="0.0" izz="0.000115"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.31 0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.31 0.3 -0.03"/>
+    <geometry>
+      <mesh filename="package://swerve_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="footprint_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0 0 0"/>
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+</joint>
+
+<joint name="Rev1" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.3 -0.3 0.075"/>
+  <parent link="base_link"/>
+  <child link="rhino_1_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.01 0.0 -0.045"/>
+  <parent link="rhino_1_1"/>
+  <child link="wheel_1_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.3 0.3 0.075"/>
+  <parent link="base_link"/>
+  <child link="rhino_2_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev4" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.01 0.0 -0.045"/>
+  <parent link="rhino_2_1"/>
+  <child link="wheel_2_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rev5" type="continuous">
+  <origin rpy="0 0 0" xyz="0.3 0.3 0.075"/>
+  <parent link="base_link"/>
+  <child link="rhino_3_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev6" type="continuous">
+  <origin rpy="0 0 0" xyz="0.01 0.0 -0.045"/>
+  <parent link="rhino_3_1"/>
+  <child link="wheel_3_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rev7" type="continuous">
+  <origin rpy="0 0 0" xyz="0.3 -0.3 0.075"/>
+  <parent link="base_link"/>
+  <child link="rhino_4_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev8" type="continuous">
+  <origin rpy="0 0 0" xyz="0.01 0.0 -0.045"/>
+  <parent link="rhino_4_1"/>
+  <child link="wheel_4_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+</robot>

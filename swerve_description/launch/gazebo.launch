@@ -1,0 +1,16 @@
+<launch>
+  <param command="$(find xacro)/xacro $(find swerve_description)/urdf/swerve.xacro" name="robot_description"/>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="spawn_urdf"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-param robot_description -urdf -model swerve"
+    output="screen" />
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+</launch>

@@ -1,0 +1,35 @@
+# gazebo_ros_control/pid_gains:
+#   wheel1_joint: {p: 55.0, i: 25.0, d: 1.0}
+#   wheel2_joint: {p: 55.0, i: 25.0, d: 1.0}
+#   wheel3_joint: {p: 55.0, i: 25.0, d: 1.0}
+#   wheel4_joint: {p: 55.0, i: 25.0, d: 1.0}
+#   holder1_joint: {p: 55.0, i: 25.0, d: 1.0}
+#   holder2_joint: {p: 55.0, i: 25.0, d: 1.0}
+#   holder3_joint: {p: 55.0, i: 25.0, d: 1.0}
+#   holder4_joint: {p: 55.0, i: 25.0, d: 1.0}
+
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+
+swerve_steering_controller:
+  type: swerve_steering_controller/SwerveSteeringController
+  wheels:  ['Rev4','Rev6','Rev2','Rev8']
+  holders: ['Rev3','Rev5','Rev1','Rev7']
+  radii:   [0.06, 0.06, 0.06, 0.06] 
+  limitless: [false, false, false, false]
+  offsets:   [0.0, 0.0, 0.0, 0.0 ]
+  positions: [[-0.3,-0.3], [-0.3,0.3], [0.3,-0.3], [0.3,0.3]]
+  limits: [[-3.14,3.14], [-3.14,3.14], [-3.14,3.14], [-3.14,3.14]]
+
+  publish_rate: 50
+
+  pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
+  twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.03]
+  
+  base_frame_id: base_footprint
+  odom_frame_id: odom
+
+  enable_odom_tf: true

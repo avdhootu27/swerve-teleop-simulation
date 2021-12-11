@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<param command="$(find xacro)/xacro $(find swerve_description)/urdf/swerve.xacro" name="robot_description"/>
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="world_name" default="worlds/empty.world"/>
+</include>
+
+<node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model swerve -x 0 -y 0 -z 0"
+      respawn="false" output="screen" />
+
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+
+<rosparam file="$(find swerve_steering_controller)/test/config/ros_controllers.yaml" command="load"/>
+
+<node name="tfpublisher" pkg="swerve_steering_controller" type="odompublisher.py"/>
+
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+  output="screen" args="swerve_steering_controller joint_state_controller"/>
+
+
+</launch>
+
