@@ -1,7 +1,5 @@
 # swerve_autonomous_navigation
 
-Myself Avdhoot Ubale working at [Team Automatons](https://teamautomatons.in/) as ROS Engineer.
-
 Here we are developing an autonomous swerve drive on hardware using [*swerve_steering_controller*](https://github.com/MarkNaeem/ros_controllers/tree/noetic-devel/swerve_steering_controller).
 
 You can find some info about the controller [here](https://discourse.ros.org/t/independent-swerve-steering-controller-for-ros-control/21534).
