@@ -1,6 +1,6 @@
-# swerve_autonomous_navigation
+# swerve_teleop_simulation
 
-Here we are developing an autonomous swerve drive on hardware using [*swerve_steering_controller*](https://github.com/MarkNaeem/ros_controllers/tree/noetic-devel/swerve_steering_controller).
+Here we are moving swerve drive using teleop in simulation using [*swerve_steering_controller*](https://github.com/MarkNaeem/ros_controllers/tree/noetic-devel/swerve_steering_controller).
 
 You can find some info about the controller [here](https://discourse.ros.org/t/independent-swerve-steering-controller-for-ros-control/21534).
 
