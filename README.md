@@ -7,7 +7,7 @@ You can find some info about the controller [here](https://discourse.ros.org/t/i
 ## Steps to implement teleop in simulation -
 1. You need Ubuntu 20.04 and ros noetic.
 2. Download ros_controllers package from [here](https://github.com/MarkNaeem/ros_controllers) from noetic-devel branch because this controller is developed in ros-noetic. Solve catkin_make errors (if any).
-3. Create your own urdf. I have added a custom made urdf 'swerve_description' in this repository. I extracted that urdf from Autodesk Fusion360. Add your package in same workspace in which you have downloded ros_controller package.
+3. Create your own urdf. I have added a custom made urdf 'swerve_description' in this repository and also added whole cad in .stl format. I extracted that urdf from Autodesk Fusion360. Add your package in same workspace in which you have downloded ros_controller package.
 4. Add robotNamespace and robotSimType parameters in gazebo_ros_control plugin (if not present)
     ```
       <gazebo>
