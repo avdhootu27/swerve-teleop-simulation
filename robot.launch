@@ -20,6 +20,5 @@
 <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
   output="screen" args="swerve_steering_controller joint_state_controller"/>
 
-
 </launch>
 
