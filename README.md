@@ -1,4 +1,4 @@
-# swerve_teleop_simulation
+# swerve-teleop-simulation
 
 Here we are moving swerve drive using teleop in simulation using [*swerve_steering_controller*](https://github.com/MarkNaeem/ros_controllers/tree/noetic-devel/swerve_steering_controller).
 
